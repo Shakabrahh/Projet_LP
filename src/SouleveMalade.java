@@ -1,10 +1,13 @@
 import java.util.Objects;
 
+/** The type Souleve malade. */
 public class SouleveMalade extends Article {
   private final Double capLevage;
   private final Double degPivo;
 
   /**
+   * Constructeur de la classe SouleveMalade.
+   *
    * @param reference Référence de l'article
    * @param marque Marque de l'article
    * @param modele Modèle de l'article
@@ -27,7 +30,7 @@ public class SouleveMalade extends Article {
   }
 
   /**
-   * Test d'égalité entre deux instances de SouleveMalade
+   * Test d'égalité entre deux instances de SouleveMalade.
    *
    * @param o l'article à tester
    * @return Vrai si les deux Clients sont les mêmes, faux autrement
@@ -38,29 +41,23 @@ public class SouleveMalade extends Article {
     if (!(o instanceof SouleveMalade)) return false;
     if (!super.equals(o)) return false;
     SouleveMalade that = (SouleveMalade) o;
-    return Objects.equals(this.capLevage, that.capLevage)
-        && Objects.equals(this.degPivo, that.degPivo);
+    return Objects.equals(capLevage, that.capLevage) && Objects.equals(degPivo, that.degPivo);
   }
 
   @Override
   public int hashCode() {
-    int result = this.capLevage != null ? this.capLevage.hashCode() : 0;
-    result = 31 * result + (this.degPivo != null ? this.degPivo.hashCode() : 0);
+    int result = capLevage != null ? capLevage.hashCode() : 0;
+    result = 31 * result + (degPivo != null ? degPivo.hashCode() : 0);
     return result;
   }
 
   /**
-   * Affichage des attributs
+   * Affichage des attributs.
    *
    * @return Attributs du SouleveMalade sous la forme d'une chaine de caractère
    */
   @Override
   public String toString() {
-    return "SouleveMalade{"
-        + "capLevage="
-        + this.capLevage
-        + ", degPivo="
-        + this.degPivo
-        + super.toString();
+    return "SouleveMalade{" + "capLevage=" + capLevage + ", degPivo=" + degPivo + super.toString();
   }
 }

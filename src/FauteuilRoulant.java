@@ -1,11 +1,12 @@
 import java.util.Objects;
 
+/** The type Fauteuil roulant. */
 public class FauteuilRoulant extends Article {
   private final Double largAssise;
   private final Double poids;
 
   /**
-   * Constructeur de la classe FauteuilRoulant
+   * Constructeur de la classe FauteuilRoulant.
    *
    * @param reference Référence de l'article
    * @param marque Marque de l'article
@@ -29,22 +30,17 @@ public class FauteuilRoulant extends Article {
   }
 
   /**
-   * Méthode d'affichage des attributs du client
+   * Méthode d'affichage des attributs du client.
    *
    * @return Attributs du FauteuilRoulant sous la forme d'une chaine de caractère
    */
   @Override
   public String toString() {
-    return "FauteuilRoulant{"
-        + "largAssise="
-        + this.largAssise
-        + ", poids="
-        + this.poids
-        + super.toString();
+    return "FauteuilRoulant{" + "largAssise=" + largAssise + ", poids=" + poids + super.toString();
   }
 
   /**
-   * Test d'égalité entre deux instances de FauteuilRoulant
+   * Test d'égalité entre deux instances de FauteuilRoulant.
    *
    * @param o l'article à tester
    * @return Vrai si les deux Clients sont les mêmes, faux autrement
@@ -55,14 +51,13 @@ public class FauteuilRoulant extends Article {
     if (!(o instanceof FauteuilRoulant)) return false;
     if (!super.equals(o)) return false;
     FauteuilRoulant that = (FauteuilRoulant) o;
-    return Objects.equals(this.largAssise, that.largAssise)
-        && Objects.equals(this.poids, that.poids);
+    return Objects.equals(largAssise, that.largAssise) && Objects.equals(poids, that.poids);
   }
 
   @Override
   public int hashCode() {
-    int result = this.largAssise != null ? this.largAssise.hashCode() : 0;
-    result = 31 * result + (this.poids != null ? this.poids.hashCode() : 0);
+    int result = largAssise != null ? largAssise.hashCode() : 0;
+    result = 31 * result + (poids != null ? poids.hashCode() : 0);
     return result;
   }
 }
