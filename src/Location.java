@@ -116,7 +116,7 @@ public class Location {
    */
   public void ajouterArticle(Article... articles) {
     for (Article a : articles) {
-      montant += a.getPrixParJour();
+      montant += a.getPrixParJour() * ChronoUnit.DAYS.between(ddb, ddf);
       if (articlesLoue.containsKey(a)) articlesLoue.replace(a, articlesLoue.get(a) + 1);
       else articlesLoue.put(a, 1);
     }
