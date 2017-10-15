@@ -110,14 +110,16 @@ public class Location {
   }
 
   /**
-   * Ajouter un nouvel article à une location.
+   * Ajouter un ou plusieurs articles à une location avec une quantité de 1.
    *
-   * @param a L'article à ajouter.
+   * @param articles Le/les article(s) à ajouter.
    */
-  public void ajouterArticle(Article a) {
-    montant += a.getPrixParJour();
-    if (articlesLoue.containsKey(a)) articlesLoue.replace(a, articlesLoue.get(a) + 1);
-    else articlesLoue.put(a, 1);
+  public void ajouterArticle(Article... articles) {
+    for (Article a : articles) {
+      montant += a.getPrixParJour();
+      if (articlesLoue.containsKey(a)) articlesLoue.replace(a, articlesLoue.get(a) + 1);
+      else articlesLoue.put(a, 1);
+    }
   }
 
   /**

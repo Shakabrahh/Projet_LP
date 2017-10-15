@@ -13,17 +13,15 @@ public final class Application {
    */
   public static void main(String... args) {
 
-    /* Création d'un magasin */
     Magasin magasin = new Magasin();
 
-    /* Création des articles */
-    Article article1 = new FauteuilRoulant("1414", "ABCD", "chaise", 14.0, 45, 12.2, 12.3);
+    Article article1 = new FauteuilRoulant("AB7", "Medico", "NT7", 14.0, 45, 12.2, 12.3);
     Article article2 =
         new MatelasAir("1404", "ABCD", "chaise", 14.0, 222, 12.2, 12.5, 14.0, 15.0, 12.0);
+    Article article3 = new SouleveMalade("1404", "ABCD", "chaise", 14.0, 222, 12.2, 12.5);
 
     /* Ajout des articles dans le stock du magasin */
-    magasin.ajouterArticleStock(article1);
-    magasin.ajouterArticleStock(article2);
+    magasin.ajouterArticleStock(article1, article2, article3);
 
     System.out.println("# Stock initial des articles #");
     magasin.afficherStockInitial();
@@ -45,9 +43,11 @@ public final class Application {
     System.out.println("# Liaison des articles avec la location #");
     location1.ajouterArticle(article1, 2);
     location1.ajouterArticle(article2, 4);
+    location1.ajouterArticle(article3, 4);
 
     location2.ajouterArticle(article1, 12);
     location2.ajouterArticle(article2, 14);
+    location2.ajouterArticle(article3, 4);
 
     Client cli = new Client("Jean", "Pierre");
     magasin.ajouterClient(cli);

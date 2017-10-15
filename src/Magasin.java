@@ -12,17 +12,19 @@ public class Magasin {
   private final List<Article> articlesStock = new ArrayList<>();
 
   /**
-   * Ajoute un article au stock du magasin.
+   * Ajoute un ou plusieurs article(s) au stock du magasin.
    *
-   * @param article L'article a ajouter
+   * @param articles Article(s) a ajouter
    */
-  public void ajouterArticleStock(Article article) {
-    if (articlesStock.contains(article))
-      articlesStock
-          .stream()
-          .filter(n -> Objects.equals(n, article))
-          .forEach(n -> n.setStock(n.getStock() + article.getStock()));
-    else articlesStock.add(article);
+  public void ajouterArticleStock(Article... articles) {
+    for (Article a : articles) {
+      if (articlesStock.contains(a))
+        articlesStock
+            .stream()
+            .filter(n -> Objects.equals(n, a))
+            .forEach(n -> n.setStock(n.getStock() + a.getStock()));
+      else articlesStock.add(a);
+    }
   }
 
   /** Affiche l'ensemble des locations. */
