@@ -54,14 +54,14 @@ public final class Application {
 
     try {
       magasin.ajouterLocation(location1, cli);
-    } catch (NotEnoughStockException notEnoughStockException) {
-      notEnoughStockException.printStackTrace();
+    } catch (NotEnoughStockException e) {
+      e.printStackTrace();
     }
 
     try {
       magasin.ajouterLocation(location2, cli);
-    } catch (NotEnoughStockException notEnoughStockException) {
-      notEnoughStockException.printStackTrace();
+    } catch (NotEnoughStockException e) {
+      e.printStackTrace();
     }
 
     System.out.println("# Afichage du stock dispo  #");
