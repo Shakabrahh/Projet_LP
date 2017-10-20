@@ -149,7 +149,7 @@ public class Location {
     return articlesLoue
         .entrySet()
         .stream()
-        .map(entry -> "\n    ■ " + entry.getKey() + " quantité : " + entry.getValue())
+        .map(entry -> "\n    ■ " + entry.getKey() + " quantité louée : " + entry.getValue())
         .collect(Collectors.joining(""));
   }
 

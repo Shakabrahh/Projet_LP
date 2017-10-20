@@ -5,9 +5,8 @@ import java.time.LocalDate;
 import java.time.chrono.ChronoLocalDate;
 import java.util.*;
 
-/** The type Magasin. */
 public class Magasin {
-  // attributs
+
   private final List<Client> clients = new ArrayList<>();
   private final List<Article> articlesStock = new ArrayList<>();
 
@@ -25,6 +24,15 @@ public class Magasin {
             .forEach(n -> n.setStock(n.getStock() + a.getStock()));
       else articlesStock.add(a);
     }
+  }
+
+  /**
+   * Getter de clients.
+   *
+   * @return Retourne la liste de clients du magasin.
+   */
+  public List<Client> getClients() {
+    return clients;
   }
 
   /** Affiche l'ensemble des locations. */
@@ -79,6 +87,15 @@ public class Magasin {
   /** Affiche le stock initial d'articles que possède le magasin. */
   public void afficherStockInitial() {
     articlesStock.forEach(System.out::println);
+  }
+
+  /**
+   * Getter des articles en stock.
+   *
+   * @return La liste des articles en stock dans le magasin.
+   */
+  public List<Article> getArticlesStock() {
+    return articlesStock;
   }
 
   /**
